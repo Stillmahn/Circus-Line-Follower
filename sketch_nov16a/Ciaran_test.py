@@ -4,23 +4,36 @@
 
 
 
-
+# Put this in base function
 timeSinceLastRun = 0
 timeSinceStart = 0
+timeAtStart = time()
 counter = 0
 
 
+state = 1
+
+
 while TRUE {
-    timeSinceLastRun = time();
+    timeSinceLastRun = time()-timeAtStart;
     timeSinceStart = timeSinceStart + timeSinceLastRun;
     counter = counter + timeSinceLastRun;
 
     # Inside one function
 
-    if counter > 3 {
-        # 3 seconds has passed
+    if state == 0 {
+        # Go straight
+    }
 
-        counter = 0;
+    if state == 1 {
+        if sub_state == 0 {
+            # Sweep right X
+            if counter > X {
+                sub_state = 1
+                counter = 0
+            }
+        }
+        if sub_state
 
     }
 
