@@ -28,17 +28,8 @@ void stopMotors(){
   motorr.run(RELEASE);
   motorl.run(RELEASE);
 }
-void lineSweep(){
-  value = digitalRead(linetracking)
-  
-  startMotorr()
-  while ()){
-    value = digitalRead()
-    
-  }
 
 
-}
 void setup () {
   pinMode(linetracking, INPUT); // Initialization sensor pin
   digitalWrite(linetracking, HIGH); // Activation of internal pull-up resistor
@@ -47,31 +38,29 @@ void setup () {
 }
    
 void loop () {
-  timeSinceLastRun = time();
-  timeSinceStart = timeSinceStart + timeSinceLastRun;
-  counter = counter + timeSinceLastRun;
-
+  int timeSinceLastRun = millis();
+  int timeSinceStart = timeSinceStart + timeSinceLastRun;
+  int counter = counter + timeSinceLastRun;
   value = digitalRead(linetracking);
   // If a signal could be detected, this is displayed on the serial monitor.
+  Serial.println(timeSinceLastRun);
   if (value == HIGH) {
     Serial.println("Line recognized");
     startMotors();
   }
-
-  if (value == LOW){
-   
+ 
+  // if (value == LOW){
+  //          if sub_state == 0 {
+  //           // Sweep right X
+  //           if counter > X {
+  //               sub_state = 1
+  //               counter = 0
+  //           }
+  //         }
     
-  }
+  //}
     
   
-    
-
-
-
-  
-
-
-
 }
 
 
