@@ -8,7 +8,7 @@ unsigned long counter    = 0;    // ms spent in current sweep phase
 unsigned long lastMillis = 0;    // last loop time
 int sub_state            = 0;    // 0 = sweep right, 1 = sweep left
 const unsigned long X    = 1000;  // base time in ms
-int speed = 200;
+int speed = 255;
 int sweepFactor = 1;
 int MAX_SWEEP_FACTOR = 5;
 
@@ -73,8 +73,6 @@ void loop () {
     return;
   }
   
- 
-
   if (sub_state == 0) {
     stopMotorl();
     startMotorr();
