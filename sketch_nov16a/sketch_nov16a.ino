@@ -47,31 +47,28 @@ void setup () {
 }
    
 void loop () {
-
-  //motor stuff
-
+  timeSinceLastRun = time();
+  timeSinceStart = timeSinceStart + timeSinceLastRun;
+  counter = counter + timeSinceLastRun;
 
   value = digitalRead(linetracking);
   // If a signal could be detected, this is displayed on the serial monitor.
   if (value == HIGH) {
     Serial.println("Line recognized");
     startMotors();
-    delay(100);
   }
 
-  else {
-    Serial.println("no line");
-    uint delay = 1000
-    while(digitalRead(linetracking) == LOW){
-      
-    }
+  if (value == LOW){
+   
+    
+  }
     
   
     
 
 
 
-  }
+  
 
 
 
